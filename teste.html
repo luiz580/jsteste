@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Lista_nomes = [] 
+        function nomesVetores(){
+        let nome = document.getElementById("nome").value;
+        let pos = document.getElementById("num").value;
+
+        Lista_nomes = Array(10);
+        Lista_nomes.splice(pos, 0, nome);
+        console.log(Lista_nomes)
+        document.getElementById("resultado").innerHTML = Lista_nomes
+        
+        if (nome === ""){
+            resultado.innerText = "por favor, digite um nome:";
+            return;
+        }
+        if (isNaN(pos) || pos < 0 || pos >= vetor.length){
+            resultado.innerText = "posição ivalida. digite de 0 a 9.";
+        }
+        if (vetor[pos] !== undefined) {
+               resultado.innerText = 'posição ${pos} já está ocuado por ${vetor[ps]}. tente outra.';
+        }
+
+        vetor[pos] = nome;
+        resultado.innertxt = 'nome ${nome} salvo na psção ${pos}.';
+
+        document.geteElementById("nomeInput").value = "";
+        document.geteElementById("psicaoInput").value = "";       
+     }
+    </script>
+    
+    <h3>vetor</h3>
+    <input type="text" id="nome" placeholder="digite seu nome:" > <br>
+    <input type="text" id="num" placeholder="digite sua posição:" >
+    <p id="resultado"></p>
+    <button onclick='nomesVetores()' >adicioner</button>
+    <hr>
+</body>
+</html>
